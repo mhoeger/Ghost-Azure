@@ -13,5 +13,13 @@
       "frontend": {
         "maxAge": 600
       }
+    },
+    "storage": {
+      "active": "ghost-storage-azure",
+      "ghost-storage-azure": {
+      "useHttps" : "true", 
+      "cacheControl" : "2592000",
+      "useDatedFolder" : true
+       }
     }
 }
