@@ -138,7 +138,7 @@
             "mail__options__auth__user": "[parameters('Email Username')]",
             "mail__options__auth__pass": "[parameters('Email Password')]",
             "mail__from": "[parameters('Email From Address')]",
-            "WEBSITE_NODE_DEFAULT_VERSION": "10.15.2",
+            "WEBSITE_NODE_DEFAULT_VERSION": "~10",
             "npm_config_arch": "x64",
             "WEBSITE_NPM_DEFAULT_VERSION": "6.4.1",
             "NODE_ENV": "production",
