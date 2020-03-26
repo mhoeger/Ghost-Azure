@@ -1,0 +1,72 @@
+{
+  "_from": "ghost-storage-azure",
+  "_id": "ghost-storage-azure@1.1.1-0",
+  "_inBundle": false,
+  "_integrity": "sha512-yDbsBFO2s6WaewQ2rC8MZBhTVxtBr6nLoE01OXriCJF9CvDtkxql8CX7eVe0YcDHK+nlJ5lnDn+i191eKqN5qA==",
+  "_location": "/ghost-storage-azure",
+  "_phantomChildren": {
+    "color": "3.1.2",
+    "detect-libc": "1.0.3",
+    "nan": "2.14.0",
+    "npmlog": "4.1.2",
+    "prebuild-install": "5.3.3",
+    "simple-get": "3.1.0",
+    "tar": "5.0.5",
+    "tunnel-agent": "0.6.0"
+  },
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "ghost-storage-azure",
+    "name": "ghost-storage-azure",
+    "escapedName": "ghost-storage-azure",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ghost-storage-azure/-/ghost-storage-azure-1.1.1-0.tgz",
+  "_shasum": "98b051eeab461da5251cbe3a527c2f4926a53b25",
+  "_spec": "ghost-storage-azure",
+  "_where": "/Users/jessicadeen/git/Ghost-Azure",
+  "author": {
+    "name": "Jessica Deen"
+  },
+  "bugs": {
+    "url": "https://github.com/jldeen/ghost-azurestorage/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "azure-storage": "^2.10.2",
+    "bluebird": "^3.5.1",
+    "ghost-storage-base": "^0.0.3",
+    "request": "^2.88.0",
+    "sharp": "^0.25.2",
+    "url": "^0.11.0"
+  },
+  "deprecated": false,
+  "description": "Store content from ghost in azure file storage",
+  "homepage": "https://jessicadeen.com",
+  "keywords": [
+    "ghost",
+    "microsoft",
+    "azure",
+    "storage",
+    "plugin",
+    "blog"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "ghost-storage-azure",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jldeen/ghost-azurestorage.git"
+  },
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "version": "1.1.1-0"
+}

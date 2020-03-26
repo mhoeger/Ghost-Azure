@@ -53,6 +53,7 @@
     "ajv": "6.12.0",
     "amperize": "0.6.1",
     "analytics-node": "3.4.0-beta.1",
+    "applicationinsights": "^1.0.0",
     "bcryptjs": "2.4.3",
     "bluebird": "3.7.2",
     "body-parser": "1.19.0",
@@ -77,6 +78,7 @@
     "express-session": "1.17.0",
     "fs-extra": "9.0.0",
     "ghost-ignition": "4.1.0",
+    "ghost-storage-azure": "^1.1.1-0",
     "ghost-storage-base": "0.0.4",
     "glob": "7.1.6",
     "got": "9.6.0",
@@ -127,8 +129,7 @@
     "simple-html-tokenizer": "0.5.9",
     "uuid": "7.0.2",
     "validator": "6.3.0",
-    "xml": "1.0.1",
-    "applicationinsights": "^1.0.0"
+    "xml": "1.0.1"
   },
   "optionalDependencies": {
     "@tryghost/html-to-mobiledoc": "0.6.4",
