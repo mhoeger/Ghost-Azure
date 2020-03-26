@@ -129,7 +129,7 @@ IF EXIST "%DEPLOYMENT_TARGET%\db.js" (
   call :ExecuteCmd !NPM_CMD! config set scripts-prepend-node-path true
   call :ExecuteCmd !NPM_CMD! config set audit false
   call :ExecuteCmd !NPM_CMD! config set loglevel silent
-  call :ExecuteCmd "!NODE_EXE!" db.js
+  call :ExecuteCmd !NPM_CMD! db.js
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )
