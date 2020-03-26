@@ -125,10 +125,22 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
 :: 	echo Skipping config.production.json
 :: )
 
+:: Bugfix - recompile node-sass
+:: See https://github.com/pnp/generator-teams/issues/79 and https://stackoverflow.com/questions/41874420/express-app-with-node-sass-on-azure-app-service
+:: IF EXIST "%DEPLOYMENT_SOURCE%\package.json" (
+::  echo Rebuilding node-sass
+::  pushd "%DEPLOYMENT_SOURCE%"
+::  call :ExecuteCmd !NPM_CMD! rebuild node-sass
+::  IF !ERRORLEVEL! NEQ 0 goto error
+::  popd
+::)
+
 :: 4. Handle database creation and migrations.
 IF EXIST "%DEPLOYMENT_TARGET%\db.js" (
   pushd "%DEPLOYMENT_TARGET%"
   echo Checking database
+  REM call :ExecuteCmd "!NODE_EXE!" install sqlite3 --target_arch=x64
+  call :ExecuteCmd "!NODE_EXE!" install sqlite3
   call :ExecuteCmd "!NODE_EXE!" db.js
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
