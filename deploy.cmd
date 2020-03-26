@@ -111,20 +111,6 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   popd
 )
 
-:: if NOT EXIST "%DEPLOYMENT_TARGET%\config.development.json" (
-:: 	echo Init config.development.json
-:: 	copy "%DEPLOYMENT_TARGET%\config.development.json.init" "%DEPLOYMENT_TARGET%\config.development.json"
-:: ) else (
-:: 	echo Skipping config.development.json
-:: )
-
-:: if NOT EXIST "%DEPLOYMENT_TARGET%\config.production.json" (
-:: 	echo Init config.production.json
-:: 	copy "%DEPLOYMENT_TARGET%\config.production.json.init" "%DEPLOYMENT_TARGET%\config.production.json"
-:: ) else (
-:: 	echo Skipping config.production.json
-:: )
-
 :: Bugfix - recompile node-sass
 :: See https://github.com/pnp/generator-teams/issues/79 and https://stackoverflow.com/questions/41874420/express-app-with-node-sass-on-azure-app-service
 :: IF EXIST "%DEPLOYMENT_SOURCE%\package.json" (
@@ -135,16 +121,16 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
 ::  popd
 ::)
 
-:: 4. Handle database creation and migrations.
-IF EXIST "%DEPLOYMENT_TARGET%\db.js" (
-  pushd "%DEPLOYMENT_TARGET%"
-  echo Checking database
-  REM call :ExecuteCmd "!NODE_EXE!" install sqlite3 --target_arch=x64
-  call :ExecuteCmd "!NODE_EXE!" install sqlite3
-  call :ExecuteCmd "!NODE_EXE!" db.js
-  IF !ERRORLEVEL! NEQ 0 goto error
-  popd
-)
+REM :: 4. Handle database creation and migrations.
+REM IF EXIST "%DEPLOYMENT_TARGET%\db.js" (
+REM   pushd "%DEPLOYMENT_TARGET%"
+REM   echo Checking database
+REM   REM call :ExecuteCmd "!NODE_EXE!" install sqlite3 --target_arch=x64
+REM   call :ExecuteCmd "!NODE_EXE!" install sqlite3
+REM   call :ExecuteCmd "!NODE_EXE!" db.js
+REM   IF !ERRORLEVEL! NEQ 0 goto error
+REM   popd
+REM )
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 goto end
